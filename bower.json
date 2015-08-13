@@ -1,0 +1,13 @@
+{
+  "name": "BackboneAcseoToolkit",
+  "version": "1.0.0",
+  "authors": [
+    "Nicolas Kern <nicolas.kern@acseo-conseil.fr>"
+  ],
+  "description": "Bunch of tools for Backbone application - written in CoffeeScript",
+  "keywords": [
+    "backbone",
+    "coffeescript"
+  ],
+  "license": "MIT"
+}
