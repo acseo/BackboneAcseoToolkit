@@ -2,8 +2,8 @@
 #
 app.module 'ACSEO.Toolkit', (AcseoToolkit, App, Bb, Mn, $, _) ->
 
-  # Extend Marionette.ItemView with a custom inline errors insertion
-  Mn.ItemView = Mn.ItemView.extend
+  # Extend Marionette.ItemView with a custom inline errors insertion (LayoutView being an extension of ItemView, it will work as well)
+  _.extend Mn.ItemView.prototype,
     onError: (model, collection) ->
       try
         errorsJson = $.parseJSON(collection.responseText)
