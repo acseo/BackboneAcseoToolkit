@@ -5,7 +5,7 @@ app.module 'ACSEO.Toolkit', (AcseoToolkit, App, Bb, Mn, $, _) ->
     if i18n != undefined and Handlebars != undefined
       i18n.init
         resGetPath: '/locales/__lng__-__ns__.json'
-        lng: 'fr'
+        lng: $.cookies.get('i18next')
         fallbackLng: 'en'
         preload: [
           'en'
