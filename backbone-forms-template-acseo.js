@@ -88,6 +88,16 @@
   <% } %>\
   ');
 
+Form.editors.Date.template = _.template('\
+    <div class="form-group">\
+      <div class="row">\
+        <div class="col-sm-4"><select data-type="date" class="form-control"><%= dates %></select></div>\
+        <div class="col-sm-4"><select data-type="month" class="form-control"><%= months %></select></div>\
+        <div class="col-sm-4"><select data-type="year" class="form-control"><%= years %></select></div>\
+      </div>\
+    </div>\
+  ', null, Form.templateSettings),
+
 
   // Form.editors.Base.prototype.className = 'form-control';
   Form.editors.Radio.template = _.template('\
