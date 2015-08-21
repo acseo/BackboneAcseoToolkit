@@ -103,8 +103,9 @@ Form.editors.Date.template = _.template('\
   Form.editors.Radio.template = _.template('\
     <% _.each(items, function(item) { %>\
       <li>\
-        <label for="<%= item.id %>"><% if (item.labelHTML){ %><%= item.labelHTML %><% }else{ %><%- item.label %><% } %>\
+        <label for="<%= item.id %>">\
           <input type="radio" name="<%= item.name %>" value="<%- item.value %>" id="<%= item.id %>" />\
+          <% if (item.labelHTML){ %><%= item.labelHTML %><% }else{ %><%- item.label %><% } %>\
         </label>\
       </li>\
     <% }); %>\
