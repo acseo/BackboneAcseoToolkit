@@ -77,10 +77,7 @@
     </div>\
   <% } else { %>\
     <div class="field-<%= key %>">\
-      <label class="control-label" for="<%= editorId %>">\
-        <% if (titleHTML){ %><%= titleHTML %>\
-        <% } else { %><%- title %><% } %>\
-      </label>\
+      <label class="control-label" for="<%= editorId %>"><% if (titleHTML){ %><%= titleHTML %><% } else { %><%- title %><% } %></label>\
       <span data-editor></span>\
       <p class="help-block" data-error></p>\
       <p class="help-block"><%= help %></p>\
