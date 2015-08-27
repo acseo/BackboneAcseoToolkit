@@ -17,17 +17,19 @@ app.module 'ACSEO.Toolkit', (AcseoToolkit, App, Bb, Mn, $, _) ->
       #     else
       #       return 'msg-error-btn'
 
-    AcseoToolkit.Alert = (text, level) ->
+    AcseoToolkit.Alert = (text, level, persist = false) ->
       region = App.getRegion 'flash'
 
       message = new AcseoToolkit.AlertMessage
         message: text
         level: level
 
-      region.once 'show', ->
-        setTimeout ->
-          region.empty()
-        , 4000
+      if not persist
+        region.once 'show', ->
+          setTimeout ->
+            region.empty()
+          , 4000
+
       region.show new AcseoToolkit.AlertBox {model: message}
 
       return
