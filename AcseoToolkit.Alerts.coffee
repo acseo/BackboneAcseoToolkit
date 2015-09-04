@@ -24,11 +24,12 @@ app.module 'ACSEO.Toolkit', (AcseoToolkit, App, Bb, Mn, $, _) ->
         message: text
         level: level
 
-      if not persist
+      if persist != true
+        time = if persist == false then 4000 else persist
         region.once 'show', ->
           setTimeout ->
             region.empty()
-          , 4000
+          , time
 
       region.show new AcseoToolkit.AlertBox {model: message}
 
