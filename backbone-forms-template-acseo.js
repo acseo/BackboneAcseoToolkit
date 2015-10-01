@@ -78,9 +78,17 @@
   <% } else { %>\
     <div class="field-<%= key %>">\
       <label class="control-label" for="<%= editorId %>"><% if (titleHTML){ %><%= titleHTML %><% } else { %><%- title %><% } %></label>\
-      <span data-editor></span>\
-      <p class="help-block" data-error></p>\
-      <p class="help-block"><%= help %></p>\
+      <% if (editorAttrs && editorAttrs.helpStyle == "bootstrap") { %>\
+        <% if (help) { %>\
+          <a class="pull-right tool-block" href="#" data-toggle="tooltip" title="<%= help %>">?</a>\
+        <% } %>\
+        <span data-editor></span>\
+        <p class="help-block" data-error></p>\
+      <% } else { %>\
+        <span data-editor></span>\
+        <p class="help-block" data-error></p>\
+        <p class="help-block" data-error><%= help %></p>\
+      <% } %>\
     </div>\
   <% } %>\
   ');
