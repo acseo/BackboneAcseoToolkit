@@ -87,7 +87,7 @@
       <% } else { %>\
         <span data-editor></span>\
         <p class="help-block" data-error></p>\
-        <p class="help-block" data-error><%= help %></p>\
+        <p class="help-block"><%= help %></p>\
       <% } %>\
     </div>\
   <% } %>\
