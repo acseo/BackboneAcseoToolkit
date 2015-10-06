@@ -24,3 +24,11 @@ app.module 'ACSEO.Toolkit', (AcseoToolkit, App, Bb, Mn, $, _) ->
           @before.apply(router, args)
       if callback
           callback.apply(@, args)
+
+    initialize: ->
+      @on 'all', @storeRoute
+      App.appHistory = []
+
+    storeRoute: ->
+      if App.appHistory[App.appHistory.length - 1] != Backbone.history.fragment
+        App.appHistory.push Backbone.history.fragment
