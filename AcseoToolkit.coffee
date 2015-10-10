@@ -29,6 +29,20 @@ app.module 'ACSEO.Toolkit', (AcseoToolkit, App, Bb, Mn, $, _) ->
       @on 'all', @storeRoute
       App.appHistory = []
 
+      @acseoToolkitChannel = Bb.Radio.channel('AcseoToolkit')
+      @acseoToolkitChannel.on('startSpinner', @startSpinner, @)
+      @acseoToolkitChannel.on('stopSpinner', @stopSpinner, @)
+
     storeRoute: ->
       if App.appHistory[App.appHistory.length - 1] != Backbone.history.fragment
         App.appHistory.push Backbone.history.fragment
+
+    startSpinner: ->
+      App.spinner.show new AcseoToolkit.Spinner
+
+    stopSpinner: ->
+      App.spinner.reset()
+
+  AcseoToolkit.Spinner = Mn.ItemView.extend
+    template: '#tpl-spinner'
+    className: 'spinner-container'
